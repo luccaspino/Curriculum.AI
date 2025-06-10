@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Objeto com as traduções
 const translations = {
   pt: {
+    "header.subtitle": "Eng. Computação",
     "nav.about": "Sobre",
     "nav.experience": "Experiência",
     "nav.projects": "Projetos",
@@ -138,6 +139,7 @@ const translations = {
     "footer.rights": "© 2025 Todos os direitos reservados."
   },
   en: {
+    "header.subtitle": "Computer Engineering",
     "nav.about": "About",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
