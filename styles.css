@@ -228,10 +228,11 @@ h3 {
   background: var(--gradient-primary);
   color: white;
   border-color: transparent;
+  transform: translateY(-5px);
 }
 
 .tech-item[data-lang].active .tech-icon {
-  filter: brightness(0) invert(1);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
 .tech-item:hover {
@@ -242,13 +243,14 @@ h3 {
 }
 
 .tech-item:hover .tech-icon {
-  filter: brightness(0) invert(1);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
 .tech-icon {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  transition: var(--transition);
 }
 
 .tech-item span {
