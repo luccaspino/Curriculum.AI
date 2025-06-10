@@ -23,10 +23,10 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#experience">Experiência</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#contact">Contato</a></li>
+          <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -35,7 +35,7 @@
       <section id="about" class="hero">
         <img src="assets/pfp.jpg" alt="Foto de Luccas Pino" class="profile-img" />
         <h1>Luccas Pereira de Pino</h1>
-        <p>
+        <p data-i18n="about.description">
           Graduando em Engenharia de Computação no SENAI CIMATEC (7° semestre).
           Entusiasta por tecnologia, IA, modelagem de dados, desenvolvimento
           fullstack e inovação, mas também por filmes, esportes e jogos.
@@ -43,24 +43,24 @@
       </section>
 
       <section id="languages">
-        <h2>Línguas e Tecnologias</h2>
+        <h2 data-i18n="languages.title">Idiomas e Tecnologias</h2>
         <div class="skills-container">
           <div class="languages-section">
-            <h3>Línguas</h3>
-            <div class="flags-container">
-              <div class="flag-item">
-                <img src="assets/brazil-flag.png" alt="Português" class="flag-icon" />
-                <span>Português (Nativo)</span>
+            <h3 data-i18n="languages.languages">Idiomas</h3>
+            <div class="tech-icons">
+              <div class="tech-item" data-lang="pt">
+                <img src="assets/brazil-flag.png" alt="Português" class="tech-icon" />
+                <span data-i18n="languages.portuguese">Português (Nativo)</span>
               </div>
-              <div class="flag-item">
-                <img src="assets/usa-flag.png" alt="Inglês" class="flag-icon" />
-                <span>Inglês (Avançado)</span>
+              <div class="tech-item" data-lang="en">
+                <img src="assets/usa-flag.png" alt="Inglês" class="tech-icon" />
+                <span data-i18n="languages.english">Inglês (Avançado)</span>
               </div>
             </div>
           </div>
 
           <div class="technologies-section">
-            <h3>Tecnologias</h3>
+            <h3 data-i18n="languages.technologies">Tecnologias</h3>
             <div class="tech-icons">
               <div class="tech-item">
                 <img src="assets/c.png" alt="C" class="tech-icon" />
@@ -100,11 +100,11 @@
       </section>
 
       <section id="experience">
-        <h2>Experiências</h2>
+        <h2 data-i18n="experience.title">Experiências</h2>
         <div class="experience-item">
-          <h3>RAS - Robotics and Automation Society</h3>
+          <h3 data-i18n="experience.ras.title">RAS - Robotics and Automation Society</h3>
           <p class="experience-date">2023-2023</p>
-          <p>
+          <p data-i18n="experience.ras.description">
             Durante minha capacitação na RAS, participei do programa de
             trainees, onde tive a oportunidade de aprimorar meus conhecimentos
             de robótica, automação, microcontroladores e GitHub
@@ -112,9 +112,9 @@
         </div>
 
         <div class="experience-item">
-          <h3>RSE Engenharia - Estágio em TI</h3>
+          <h3 data-i18n="experience.rse.title">RSE Engenharia - Estágio em TI</h3>
           <p class="experience-date">2024-Atual</p>
-          <p>
+          <p data-i18n="experience.rse.description">
             Atuo na área de inovação e tecnologia, desenvolvendo soluções que
             integram automação de processos, pesquisa aplicada e desenvolvimento
             de aplicativos (low-code)
@@ -123,7 +123,7 @@
       </section>
 
       <section id="projects">
-        <h2>Projetos</h2>
+        <h2 data-i18n="projects.title">Projetos</h2>
         <div class="projects-container">
           <div class="project-card">
             <div class="project-inner">
@@ -134,28 +134,28 @@
                   class="project-image"
                 />
                 <div class="project-info">
-                  <h3>Ticket Generator</h3>
-                  <p>Criação de tickets com validações de campos</p>
+                  <h3 data-i18n="projects.ticket.title">Ticket Generator</h3>
+                  <p data-i18n="projects.ticket.description">Criação de tickets com validações de campos</p>
                 </div>
               </div>
               <div class="project-back">
-                <h3>Ticket Generator</h3>
-                <p>
+                <h3 data-i18n="projects.ticket.title">Ticket Generator</h3>
+                <p data-i18n="projects.ticket.fullDescription">
                   Criação de tickets a partir de um desafio do FrontEnd mentor.
                 </p>
-                <p>Tecnologias: Html, Css e JavaScript</p>
+                <p data-i18n="projects.ticket.technologies">Tecnologias: Html, Css e JavaScript</p>
                 <div class="project-links">
                   <a
                     href="https://ticket.luccaspino.tech"
                     target="_blank"
                     class="project-link"
-                    >Ver Projeto</a
+                    data-i18n="projects.viewProject">Ver Projeto</a
                   >
                   <a
                     href="https://github.com/luccaspino/PaginaDeGeracaoDeTickets"
                     target="_blank"
                     class="project-link"
-                    >Código</a
+                    data-i18n="projects.viewCode">Código</a
                   >
                 </div>
               </div>
@@ -171,29 +171,29 @@
                   class="project-image"
                 />
                 <div class="project-info">
-                  <h3>Age Calculator</h3>
-                  <p>Calculadora de idade</p>
+                  <h3 data-i18n="projects.age.title">Age Calculator</h3>
+                  <p data-i18n="projects.age.description">Calculadora de idade</p>
                 </div>
               </div>
               <div class="project-back">
-                <h3>Age Calculator</h3>
-                <p>
+                <h3 data-i18n="projects.age.title">Age Calculator</h3>
+                <p data-i18n="projects.age.fullDescription">
                   Aplicação na web que calcula a idade exata a partir da data de
                   nascimento, mostrando anos, meses e dias.
                 </p>
-                <p>Tecnologias: React, JavaScript, Css</p>
+                <p data-i18n="projects.age.technologies">Tecnologias: React, JavaScript, Css</p>
                 <div class="project-links">
                   <a
                     href="https://agecalc.luccaspino.tech"
                     target="_blank"
                     class="project-link"
-                    >Ver Projeto</a
+                    data-i18n="projects.viewProject">Ver Projeto</a
                   >
                   <a
                     href="https://github.com/luccaspino/AgeCalc"
                     target="_blank"
                     class="project-link"
-                    >Código</a
+                    data-i18n="projects.viewCode">Código</a
                   >
                 </div>
               </div>
@@ -205,29 +205,29 @@
               <div class="project-front">
                 <img src="assets/gameboxd.png" alt="API Games" class="project-image" />
                 <div class="project-info">
-                  <h3>API Games</h3>
-                  <p>API para catalogação de jogos e avaliações.</p>
+                  <h3 data-i18n="projects.api.title">API Games</h3>
+                  <p data-i18n="projects.api.description">API para catalogação de jogos e avaliações.</p>
                 </div>
               </div>
               <div class="project-back">
-                <h3>API Games</h3>
-                <p>API de catalogação de jogos</p>
-                <p>Tecnologias: React, TypeScript, Css</p>
+                <h3 data-i18n="projects.api.title">API Games</h3>
+                <p data-i18n="projects.api.fullDescription">API de catalogação de jogos</p>
+                <p data-i18n="projects.api.technologies">Tecnologias: React, TypeScript, Css</p>
                 <div class="project-links">
                   <a href="https://api-games.vercel.app" class="project-link"
-                    >Ver Projeto</a
+                    data-i18n="projects.viewProject">Ver Projeto</a
                   >
                   <a
                     href="https://github.com/Miltchola/api_games_backend"
                     target="_blank"
                     class="project-link"
-                    >Ver Backend</a
+                    data-i18n="projects.viewBackend">Ver Backend</a
                   >
                   <a
                     href="https://github.com/Miltchola/api_games"
                     target="_blank"
                     class="project-link"
-                    >Ver Frontend</a
+                    data-i18n="projects.viewFrontend">Ver Frontend</a
                   >
                 </div>
               </div>
@@ -237,7 +237,7 @@
       </section>
 
       <section id="contact">
-        <h2>Contato</h2>
+        <h2 data-i18n="contact.title">Contato</h2>
         <div class="contact-info">
           <div class="contact-item">
             <img src="assets/email.png" alt="Email" />
@@ -261,7 +261,7 @@
 
 
     <footer>
-      <p>&copy; 2025 Todos os direitos reservados.</p>
+      <p data-i18n="footer.rights">&copy; 2025 Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
