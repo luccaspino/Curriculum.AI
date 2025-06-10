@@ -214,6 +214,19 @@ h3 {
   box-shadow: var(--box-shadow);
   transition: var(--transition);
   border: 2px solid var(--light-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.tech-item span {
+  font-size: 0.9rem;
 }
 
 .tech-item:hover {
@@ -221,6 +234,10 @@ h3 {
   color: white;
   transform: translateY(-5px);
   border-color: transparent;
+}
+
+.tech-item:hover .tech-icon {
+  filter: brightness(0) invert(1);
 }
 
 /* Projects Section */
@@ -299,7 +316,9 @@ h3 {
 .project-links {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .project-link {
@@ -310,8 +329,9 @@ h3 {
   text-decoration: none;
   border-radius: 25px;
   font-weight: 600;
-  margin: 10px;
   transition: var(--transition);
+  text-align: center;
+  min-width: 120px;
 }
 
 .project-link:hover {
