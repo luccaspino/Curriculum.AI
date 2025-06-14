@@ -80,10 +80,7 @@ O site é totalmente responsivo e se adapta a diferentes tamanhos de tela:
 - LinkedIn: [Luccas Pino](https://www.linkedin.com/in/luccas-pino-12430a268/)
 - GitHub: [luccaspino](https://github.com/luccaspino)
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-Desenvolvido com ❤️ por Luccas Pino
+Desenvolvido por Luccas Pino
