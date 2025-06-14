@@ -155,7 +155,7 @@ const translations = {
     "experience.ras.title": "RAS - Robotics and Automation Society",
     "experience.ras.description": "During my training at RAS, I participated in the trainee program, where I had the opportunity to improve my knowledge in robotics, automation, microcontrollers and GitHub",
     "experience.rse.title": "RSE Engineering - IT Internship",
-    "experience.rse.description": "I work in the innovation and technology area, developing solutions that integrate process automation, applied research and application development (low-code)",
+    "experience.rse.description": "I work in the field of innovation and technology, developing solutions that integrate process automation, applied research, app development, programming using Python, and database management. My goal is to optimize workflows, reduce manual tasks, and speed up deliveries with efficiency and quality, always prioritizing practicality, best practices, organization, security, and innovation in the implemented solutions. ",
     "projects.title": "Projects",
     "projects.viewProject": "View Project",
     "projects.viewCode": "Code",
