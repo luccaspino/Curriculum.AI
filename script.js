@@ -1,70 +1,144 @@
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  // Traduções
+  const translations = {
+    pt: {
+      "header.subtitle": "Eng. Computação",
+      "nav.about": "Sobre",
+      "nav.skills": "Habilidades",
+      "nav.experience": "Experiência",
+      "nav.projects": "Projetos",
+      "nav.contact": "Contato",
+      "about.description": "Graduando em Engenharia de Computação no SENAI CIMATEC (8° semestre). Entusiasta por tecnologia, IA, modelagem de dados, desenvolvimento fullstack e inovação, mas também por filmes, esportes e jogos.",
+      "languages.title": "Idiomas e Tecnologias",
+      "languages.languages": "Idiomas",
+      "languages.portuguese": "Português (Nativo)",
+      "languages.english": "Inglês (Avançado - C1)",
+      "languages.technologies": "Tecnologias e Competências",
+      "experience.title": "Experiências",
+      "experience.rse.title": "RSE - Gerenciamento de Risco e Sustentabilidade",
+      "experience.rse.date": "Estagiário de Tecnologia da Informação | Mar 2024 - Atual",
+  "experience.rse.description": "<ul>\n  <li>Atuação na área de inovação e tecnologia, com foco no desenvolvimento de soluções que integram automação de processos, pesquisa aplicada e desenvolvimento de aplicativos.</li>\n  <li>Automação de processos utilizando Python</li>\n  <li>Desenvolvimento de aplicativos</li>\n  <li>Gerenciamento de banco de dados</li>\n  <li>Otimização de fluxos de trabalho</li>\n  <li>Redução de tarefas manuais</li>\n  <li>Implementação de soluções com foco em praticidade, organização, segurança e inovação</li>\n</ul>",
+      "experience.ras.title": "IEE CIMATEC - RAS (Robotics and Automation Society)",
+      "experience.ras.date": "Programa de Trainees | Mar 2023 - Dez 2023",
+  "experience.ras.description": "<ul>\n  <li>Participação no programa de capacitação do capítulo RAS (Robotics and Automation Society) do IEEE voltado para a Universidade.</li>\n  <li>Aprimoramento em robótica e automação</li>\n  <li>Desenvolvimento de projetos com microcontroladores</li>\n  <li>Programação e versionamento de código com GitHub</li>\n  <li>Trabalho em equipe em projetos de tecnologia</li>\n</ul>",
+      "projects.title": "Projetos",
+      "projects.games.title": "Plataforma de Avaliação de Jogos",
+      "projects.games.subtitle": "Projeto coletivo da disciplina de Desenvolvimento Full Stack (2024)",
+      "projects.games.description": "Aplicação para consulta, avaliação e gerenciamento de jogos utilizando API externa.",
+      "projects.games.stack": "Stack: React, TypeScript, Node.js, Express, MongoDB",
+      "projects.games.features": "Autenticação JWT • Metodologia Scrum",
+      "projects.florir.title": "Florir Floricultura",
+      "projects.florir.subtitle": "Projeto coletivo da Trilha Técnico Gestor (2025)",
+      "projects.florir.description": "Sistema completo de e-commerce para floricultura com painel administrativo.",
+      "projects.florir.stack": "Stack: Next.js, TypeScript, Node.js, Express, MongoDB",
+      "projects.florir.features": "Autenticação JWT • API RESTful com Swagger",
+      "projects.ticket.title": "Ticket Generator",
+      "projects.ticket.description": "Sistema de geração de tickets com validações",
+      "projects.ticket.fullDescription": "Criação de tickets a partir de um desafio do FrontEnd Mentor.",
+      "projects.ticket.technologies": "Tecnologias: HTML, CSS e JavaScript",
+      "projects.age.title": "Age Calculator",
+      "projects.age.description": "Calculadora de idade precisa",
+      "projects.age.fullDescription": "Aplicação que calcula a idade exata a partir da data de nascimento, mostrando anos, meses e dias.",
+      "projects.age.technologies": "Tecnologias: React, JavaScript, CSS",
+      "projects.viewProject": "Ver Projeto",
+      "projects.viewCode": "Código",
+      "projects.viewFrontend": "Frontend",
+      "projects.viewBackend": "Backend",
+      "contact.title": "Contato",
+      "footer.rights": "© 2025 Todos os direitos reservados."
+    },
+    en: {
+      "header.subtitle": "Computer Engineering",
+      "nav.about": "About",
+      "nav.skills": "Skills",
+      "nav.experience": "Experience",
+      "nav.projects": "Projects",
+      "nav.contact": "Contact",
+      "about.description": "Computer Engineering student at SENAI CIMATEC (8th semester). Enthusiast about technology, AI, data modeling, fullstack development and innovation, but also about movies, sports and games.",
+      "languages.title": "Languages and Technologies",
+      "languages.languages": "Languages",
+      "languages.portuguese": "Portuguese (Native)",
+      "languages.english": "English (Advanced - C1)",
+      "languages.technologies": "Technologies and Skills",
+      "experience.title": "Experience",
+      "experience.rse.title": "RSE - Risk and Sustainability Management",
+      "experience.rse.date": "IT Intern | Mar 2024 - Present",
+  "experience.rse.description": "<ul>\n  <li>Work in innovation and technology, focused on developing solutions that integrate process automation, applied research and application development.</li>\n  <li>Process automation using Python</li>\n  <li>Application development</li>\n  <li>Database management</li>\n  <li>Workflow optimization</li>\n  <li>Reduction of manual tasks</li>\n  <li>Implementation of solutions focused on practicality, organization, security and innovation</li>\n</ul>",
+      "experience.ras.title": "IEEE CIMATEC - RAS (Robotics and Automation Society)",
+      "experience.ras.date": "Trainee Program | Mar 2023 - Dec 2023",
+  "experience.ras.description": "<ul>\n  <li>Participation in the RAS (Robotics and Automation Society) traineeship program of the IEEE aimed at the University.</li>\n  <li>Improvement in robotics and automation</li>\n  <li>Development of projects with microcontrollers</li>\n  <li>Programming and code versioning with GitHub</li>\n  <li>Teamwork on technology projects</li>\n</ul>",
+      "projects.title": "Projects",
+      "projects.games.title": "Game Review Platform",
+      "projects.games.subtitle": "Collaborative project from Full Stack Development course (2024)",
+      "projects.games.description": "Application for consulting, reviewing and managing games using external API.",
+      "projects.games.stack": "Stack: React, TypeScript, Node.js, Express, MongoDB",
+      "projects.games.features": "JWT Authentication • Scrum Methodology",
+      "projects.florir.title": "Florir Flower Shop",
+      "projects.florir.subtitle": "Collaborative project from Technical Manager Track (2025)",
+      "projects.florir.description": "Complete e-commerce system for flower shop with admin panel.",
+      "projects.florir.stack": "Stack: Next.js, TypeScript, Node.js, Express, MongoDB",
+      "projects.florir.features": "JWT Authentication • RESTful API with Swagger",
+      "projects.ticket.title": "Ticket Generator",
+      "projects.ticket.description": "Ticket generation system with validations",
+      "projects.ticket.fullDescription": "Ticket creation from a FrontEnd Mentor challenge.",
+      "projects.ticket.technologies": "Technologies: HTML, CSS and JavaScript",
+      "projects.age.title": "Age Calculator",
+      "projects.age.description": "Precise age calculator",
+      "projects.age.fullDescription": "Application that calculates exact age from birth date, showing years, months and days.",
+      "projects.age.technologies": "Technologies: React, JavaScript, CSS",
+      "projects.viewProject": "View Project",
+      "projects.viewCode": "Code",
+      "projects.viewFrontend": "Frontend",
+      "projects.viewBackend": "Backend",
+      "contact.title": "Contact",
+      "footer.rights": "© 2025 All rights reserved."
+    }
+  };
 
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+  // Função de tradução
+  function updateLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        // use innerHTML so we can support lists (HTML) in translations
+        element.innerHTML = translations[lang][key];
+      }
+    });
+  }
+
+  // Event listeners para bandeiras
+  document.querySelectorAll('.tech-item[data-lang]').forEach(item => {
+    item.addEventListener('click', () => {
+      const lang = item.getAttribute('data-lang');
+      updateLanguage(lang);
+      
+      // Atualizar classe ativa
+      document.querySelectorAll('.tech-item[data-lang]').forEach(el => {
+        el.classList.remove('active');
+      });
+      item.classList.add('active');
     });
   });
-});
 
-const projectCards = document.querySelectorAll(".project-card");
+  // Mobile menu
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
 
-projectCards.forEach((card, index) => {
-  card.style.transitionDelay = `${index * 0.1}s`;
-});
-
-function setupMobileFlip() {
-  if (window.innerWidth <= 768) {
-    document.querySelectorAll(".project-inner").forEach((inner) => {
-      inner.classList.add("mobile-flip");
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
 
-    document.querySelectorAll(".project-card").forEach((card) => {
-      card.addEventListener("click", function () {
-        this.querySelector(".project-inner").classList.toggle("show-back");
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
       });
     });
   }
-}
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.style.background = "rgba(44, 62, 80, 0.95)";
-    header.style.padding = "10px 0";
-  } else {
-    header.style.background = "var(--primary-color)";
-    header.style.padding = "15px 0";
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  setupMobileFlip();
-});
-
-window.addEventListener("resize", function () {
-  setupMobileFlip();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  const links = document.querySelectorAll('.nav-links a');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenuBtn.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
-
-  // Smooth scroll para links de navegação
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -78,143 +152,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Animação de fade-in para elementos quando entram na viewport
-  const observerOptions = {
-    threshold: 0.1
-  };
+  // Header scroll effect
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (header) {
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(44, 62, 80, 0.95)';
+        header.style.padding = '10px 0';
+      } else {
+        header.style.background = 'rgba(26, 26, 46, 0.95)';
+        header.style.padding = '15px 0';
+      }
+    }
+  });
 
+  // Animações
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('section').forEach(section => {
-    section.classList.add('fade-out');
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(section);
   });
-});
 
-// Objeto com as traduções
-const translations = {
-  pt: {
-    "header.subtitle": "Eng. Computação",
-    "nav.about": "Sobre",
-    "nav.experience": "Experiência",
-    "nav.projects": "Projetos",
-    "nav.contact": "Contato",
-    "languages.title": "Idiomas e Tecnologias",
-    "languages.languages": "Idiomas",
-    "languages.technologies": "Tecnologias",
-    "languages.portuguese": "Português (Nativo)",
-    "languages.english": "Inglês (Avançado)",
-    "about.title": "Sobre",
-    "about.description": "Graduando em Engenharia de Computação no SENAI CIMATEC (7° semestre). Entusiasta por tecnologia, IA, modelagem de dados, desenvolvimento fullstack e inovação, mas também por filmes, esportes e jogos.",
-    "experience.title": "Experiências",
-    "experience.ras.title": "RAS - Robotics and Automation Society",
-    "experience.ras.description": "Durante minha capacitação na RAS, participei do programa de trainees, onde tive a oportunidade de aprimorar meus conhecimentos de robótica, automação, microcontroladores e GitHub",
-    "experience.rse.title": "RSE Engenharia - Estágio em TI",
-    "experience.rse.description": "Atuo na área de inovação e tecnologia, desenvolvendo soluções que integram automação de processos, pesquisa aplicada e desenvolvimento de aplicativos (low-code)",
-    "projects.title": "Projetos",
-    "projects.viewProject": "Ver Projeto",
-    "projects.viewCode": "Código",
-    "projects.viewBackend": "Ver Backend",
-    "projects.viewFrontend": "Ver Frontend",
-    "projects.ticket.title": "Ticket Generator",
-    "projects.ticket.description": "Criação de tickets com validações de campos",
-    "projects.ticket.fullDescription": "Criação de tickets a partir de um desafio do FrontEnd mentor.",
-    "projects.ticket.technologies": "Tecnologias: Html, Css e JavaScript",
-    "projects.age.title": "Age Calculator",
-    "projects.age.description": "Calculadora de idade",
-    "projects.age.fullDescription": "Aplicação na web que calcula a idade exata a partir da data de nascimento, mostrando anos, meses e dias.",
-    "projects.age.technologies": "Tecnologias: React, JavaScript, Css",
-    "projects.api.title": "API Games",
-    "projects.api.description": "API para catalogação de jogos e avaliações.",
-    "projects.api.fullDescription": "API de catalogação de jogos",
-    "projects.api.technologies": "Tecnologias: React, TypeScript, Css",
-    "contact.title": "Contato",
-    "footer.rights": "© 2025 Todos os direitos reservados."
-  },
-  en: {
-    "header.subtitle": "Computer Engineering",
-    "nav.about": "About",
-    "nav.experience": "Experience",
-    "nav.projects": "Projects",
-    "nav.contact": "Contact",
-    "languages.title": "Languages and Technologies",
-    "languages.languages": "Languages",
-    "languages.technologies": "Technologies",
-    "languages.portuguese": "Portuguese (Native)",
-    "languages.english": "English (Advanced)",
-    "about.title": "About",
-    "about.description": "Computer Engineering student at SENAI CIMATEC (7th semester). Enthusiast about technology, AI, data modeling, fullstack development and innovation, but also about movies, sports and games.",
-    "experience.title": "Experience",
-    "experience.ras.title": "RAS - Robotics and Automation Society",
-    "experience.ras.description": "During my training at RAS, I participated in the trainee program, where I had the opportunity to improve my knowledge in robotics, automation, microcontrollers and GitHub",
-    "experience.rse.title": "RSE Engineering - IT Internship",
-    "experience.rse.description": "I work in the field of innovation and technology, developing solutions that integrate process automation, applied research, app development, programming using Python, and database management. My goal is to optimize workflows, reduce manual tasks, and speed up deliveries with efficiency and quality, always prioritizing practicality, best practices, organization, security, and innovation in the implemented solutions. ",
-    "projects.title": "Projects",
-    "projects.viewProject": "View Project",
-    "projects.viewCode": "Code",
-    "projects.viewBackend": "View Backend",
-    "projects.viewFrontend": "View Frontend",
-    "projects.ticket.title": "Ticket Generator",
-    "projects.ticket.description": "Ticket creation with field validations",
-    "projects.ticket.fullDescription": "Ticket creation from a FrontEnd mentor challenge.",
-    "projects.ticket.technologies": "Technologies: Html, Css and JavaScript",
-    "projects.age.title": "Age Calculator",
-    "projects.age.description": "Age calculator",
-    "projects.age.fullDescription": "Web application that calculates exact age from birth date, showing years, months and days.",
-    "projects.age.technologies": "Technologies: React, JavaScript, Css",
-    "projects.api.title": "API Games",
-    "projects.api.description": "API for game cataloging and reviews.",
-    "projects.api.fullDescription": "Game cataloging API",
-    "projects.api.technologies": "Technologies: React, TypeScript, Css",
-    "contact.title": "Contact",
-    "footer.rights": "© 2025 All rights reserved."
-  }
-};
-
-// Função para atualizar o texto dos elementos
-function updateContent(lang) {
-  document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
+  // Mobile flip
+  function setupMobileFlip() {
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function () {
+          const inner = this.querySelector('.project-inner');
+          if (inner) {
+            inner.style.transform = inner.style.transform === 'rotateY(180deg)' 
+              ? 'rotateY(0deg)' 
+              : 'rotateY(180deg)';
+          }
+        });
+      });
     }
-  });
-}
+  }
 
-// Adicionar eventos de clique aos botões de idioma
-document.querySelectorAll('.tech-item[data-lang]').forEach(item => {
-  item.addEventListener('click', () => {
-    const lang = item.getAttribute('data-lang');
-    updateContent(lang);
-    
-    // Atualizar classe ativa
-    document.querySelectorAll('.tech-item[data-lang]').forEach(el => {
-      el.classList.remove('active');
-    });
-    item.classList.add('active');
-  });
-});
-
-// Menu mobile
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenuBtn.addEventListener('click', () => {
-  mobileMenuBtn.classList.toggle('active');
-  navLinks.classList.toggle('active');
-});
-
-// Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenuBtn.classList.remove('active');
-    navLinks.classList.remove('active');
-  });
+  setupMobileFlip();
+  window.addEventListener('resize', setupMobileFlip);
 });
