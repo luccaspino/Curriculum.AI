@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  CERTIFICATIONS,
   EDUCATION,
   EXP,
   LANGUAGE_LEVELS,
@@ -103,6 +104,19 @@ export default function PortfolioPage() {
             <ul className="pf-exp-bul">
               {LANGUAGE_LEVELS[lang].map((item) => (
                 <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="pf-info-card">
+            <p className="pf-sg-label">{t.certTitle}</p>
+            <ul className="pf-exp-bul">
+              {CERTIFICATIONS[lang].map((item) => (
+                <li
+                  key={item}
+                  className={item === "AWS Certified AI Practitioner" ? "pf-cert-featured" : undefined}
+                >
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

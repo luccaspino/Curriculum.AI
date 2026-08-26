@@ -40,6 +40,7 @@ export interface UiCopy {
   eduTitle: string;
   degreeLabel: string;
   langTitle: string;
+  certTitle: string;
   projTitle: string;
   contTitle: string;
   footer: string;
@@ -71,7 +72,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     pt: "Backend",
     en: "Backend",
-    items: ["FastAPI", "Node.js", "Express"],
+    items: ["Python", "FastAPI", "Java", "Spring Boot", "Node.js", "Express", "APIs REST", "Selenium", "RPA"],
   },
   {
     pt: "Frontend",
@@ -180,6 +181,17 @@ export const PROJECTS: Project[] = [
 export const EXP: Record<Lang, ExperienceItem[]> = {
   pt: [
     {
+      company: "SoftExpert",
+      role: "Engenheiro de Software Jr.",
+      period: "Jun 2026 - Atual",
+      location: "Brasil",
+      bullets: [
+        "Automação e Back-end: Reduzi em 71% o tempo de processamento de projetos ao desenvolver RPAs totalmente automatizados em Python com Selenium e APIs em FastAPI, integrados a sistemas ERP.",
+        "Integração de Sistemas: Centralizei 10 fluxos operacionais em um único chatbot desenvolvido em Node.js, integrado a sistemas ERP, WhatsApp via Twilio e Amazon SQS para processamento assíncrono de mensagens.",
+        "IA e AWS: Desenvolvo agentes de IA com arquitetura RAG e soluções de processamento inteligente de documentos (IDP), utilizando Amazon S3, DynamoDB, API Gateway, Lambda, RDS e Bedrock.",
+      ],
+    },
+    {
       company: "RSE - Gerenciamento de Risco e Sustentabilidade",
       role: "Estagiário de Engenharia de Software",
       period: "Mar 2024 - Mar 2026",
@@ -194,6 +206,17 @@ export const EXP: Record<Lang, ExperienceItem[]> = {
     },
   ],
   en: [
+    {
+      company: "SoftExpert",
+      role: "Junior Software Engineer",
+      period: "Jun 2026 - Present",
+      location: "Brazil",
+      bullets: [
+        "Automation and Back-end: Reduced project processing time by 71% by developing fully automated RPAs in Python with Selenium and FastAPI APIs integrated with ERP systems.",
+        "Systems Integration: Consolidated 10 operational workflows into a single Node.js chatbot integrated with ERP systems, WhatsApp via Twilio and Amazon SQS for asynchronous message processing.",
+        "AI and AWS: Develop RAG-based AI agents and intelligent document processing (IDP) solutions using Amazon S3, DynamoDB, API Gateway, Lambda, RDS and Bedrock.",
+      ],
+    },
     {
       company: "RSE - Risk and Sustainability Management",
       role: "Software Engineering Intern",
@@ -228,6 +251,21 @@ export const LANGUAGE_LEVELS: Record<Lang, string[]> = {
   en: ["Portuguese (Native)", "English (Advanced - C1)"],
 };
 
+export const CERTIFICATIONS: Record<Lang, string[]> = {
+  pt: [
+    "AWS Certified AI Practitioner",
+    "AWS Academy Cloud Foundations",
+    "AWS Academy Machine Learning Foundations",
+    "Claude Code in Action (Anthropic)",
+  ],
+  en: [
+    "AWS Certified AI Practitioner",
+    "AWS Academy Cloud Foundations",
+    "AWS Academy Machine Learning Foundations",
+    "Claude Code in Action (Anthropic)",
+  ],
+};
+
 export const UI: Record<Lang, UiCopy> = {
   pt: {
     nav: [
@@ -238,17 +276,18 @@ export const UI: Record<Lang, UiCopy> = {
       ["Projetos", "#projects"],
       ["Contato", "#contact"],
     ],
-    subtitle: "Engenharia de Computação",
+    subtitle: "Engenharia de Software · 1x certificado pela AWS",
     heroDesc:
-      "Graduando em Engenharia de Computação com experiência Full Stack, foco em Back-end, Engenharia de Dados e desenvolvimento de soluções com IA. Domínio em Python (FastAPI) e JavaScript (React, Next.js, Node.js), além de bancos de dados, integração de APIs e cloud (Azure/AWS).",
+      "Engenheiro de Software com mais de 2 anos de experiência em automação, back-end e inteligência artificial, com foco em soluções na AWS. Atuo com Python, FastAPI, Node.js, APIs REST, SOAP e agentes de IA. Graduando em Engenharia de Computação, inglês avançado (C1) e 1x certificado pela AWS.",
     skillsTitle: "Tecnologias",
     expTitle: "Experiência Profissional",
     eduTitle: "Formação Acadêmica",
     degreeLabel: "Graduação",
     langTitle: "Idiomas",
+    certTitle: "Certificações",
     projTitle: "Projetos",
     contTitle: "Contato",
-    footer: "© 2025 Luccas Pino. Todos os direitos reservados.",
+    footer: "© 2026 Luccas Pino. Todos os direitos reservados.",
     flipHint: "Passe o mouse",
   },
   en: {
@@ -260,17 +299,18 @@ export const UI: Record<Lang, UiCopy> = {
       ["Projects", "#projects"],
       ["Contact", "#contact"],
     ],
-    subtitle: "Computer Engineering",
+    subtitle: "Software Engineering · 1x AWS Certified",
     heroDesc:
-      "Computer Engineering student with Full Stack experience, focused on Back-end, Data Engineering and AI-driven solutions. Solid proficiency in Python (FastAPI) and JavaScript (React, Next.js, Node.js), plus databases, API integrations and cloud (Azure/AWS).",
+      "Software Engineer with over 2 years of experience in automation, back-end development and artificial intelligence, focused on AWS solutions. I work with Python, FastAPI, Node.js, REST APIs, SOAP and AI agents. Computer Engineering undergraduate, advanced English speaker (C1) and 1x AWS Certified.",
     skillsTitle: "Technologies",
     expTitle: "Professional Experience",
     eduTitle: "Academic Background",
     degreeLabel: "Degree",
     langTitle: "Languages",
+    certTitle: "Certifications",
     projTitle: "Projects",
     contTitle: "Contact",
-    footer: "© 2025 Luccas Pino. All rights reserved.",
+    footer: "© 2026 Luccas Pino. All rights reserved.",
     flipHint: "Hover to flip",
   },
 };

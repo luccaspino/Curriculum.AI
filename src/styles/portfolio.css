@@ -124,6 +124,17 @@
 }
 .pf-info-main { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .pf-info-sub { color: #dbe6f5; font-size: 0.88rem; }
+.pf-exp-bul li.pf-cert-featured {
+  width: fit-content;
+  margin-bottom: 5px;
+  padding: 8px 12px 8px 30px;
+  border: 1px solid rgba(249,115,22,0.45);
+  border-radius: 7px;
+  background: rgba(249,115,22,0.1);
+  color: var(--text);
+  font-weight: 700;
+}
+.pf-exp-bul li.pf-cert-featured::before { left: 12px; }
 
 /* PROJECTS */
 .pf-grid {
